@@ -15,6 +15,7 @@ jobs:
         run: |
           yarn install
           yarn build
+          echo ${{ secrets.REACT_APP_API_KEY }}
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
