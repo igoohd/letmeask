@@ -1,50 +1,53 @@
-import { Link, useHistory } from 'react-router-dom'
-import { FormEvent } from 'react'
-import { useAuth } from 'hooks/useAuth'
+import { Link, useHistory } from "react-router-dom";
+import { FormEvent } from "react";
+import { useAuth } from "hooks/useAuth";
 
-import illustrationImg from 'assets/images/illustration.svg'
-import logoImg from 'assets/images/logo.svg'
+import illustrationImg from "assets/images/illustration.svg";
+import logoImg from "assets/images/logo.svg";
 
-import { Button } from 'components/Button'
-import { database } from 'services/firebase'
+import { Button } from "components/Button";
+import { database } from "services/firebase";
 
-import 'styles/auth.scss'
-import { useState } from 'react'
+import "styles/auth.scss";
+import { useState } from "react";
 
 export function NewRoom() {
-  const { user, signOut } = useAuth()
-  const history = useHistory()
-  const [newRoom, setNewRoom] = useState('')
+  const { user, signOut } = useAuth();
+  const history = useHistory();
+  const [newRoom, setNewRoom] = useState("");
 
   async function handleCreateRoom(event: FormEvent) {
-    event.preventDefault()
+    event.preventDefault();
 
-    if (newRoom.trim() === '') {
-      return
+    if (newRoom.trim() === "") {
+      return;
     }
 
-    const roomRef = database.ref('rooms')
+    const roomRef = database.ref("rooms");
 
     const firebaseRoom = await roomRef.push({
       title: newRoom,
-      authorId: user?.id
-    })
+      authorId: user?.id,
+    });
 
-    history.push(`/rooms/${firebaseRoom.key}`)
+    history.push(`/rooms/${firebaseRoom.key}`);
   }
 
   async function handleSignOut(event: FormEvent) {
-    event.preventDefault()
+    event.preventDefault();
 
-    await signOut()
+    await signOut();
 
-    history.push('/')
+    history.push("/");
   }
 
   return (
     <div id="page-auth">
       <aside>
-        <img src={illustrationImg} alt="Ilustração simbolizando perguntas e respostas" />
+        <img
+          src={illustrationImg}
+          alt="Ilustração simbolizando perguntas e respostas"
+        />
         <strong>Crie salas de Q&amp;A ao vivo</strong>
         <p>Tire as dúvidas da sua audiência em tempo real</p>
       </aside>
@@ -56,17 +59,13 @@ export function NewRoom() {
             <input
               type="text"
               placeholder="Nome da sala"
-              onChange={event => setNewRoom(event.target.value)}
+              onChange={(event) => setNewRoom(event.target.value)}
               value={newRoom}
             />
-            <Button type="submit">
-              Criar na sala
-            </Button>
+            <Button type="submit">Criar na sala</Button>
           </form>
           <form onSubmit={handleSignOut}>
-            <Button type="submit">
-              Logout
-            </Button>
+            <Button type="submit">Logout</Button>
           </form>
           <p>
             Quer entrar em uma sala existente? <Link to="/">Clique aqui</Link>
@@ -74,5 +73,5 @@ export function NewRoom() {
         </div>
       </main>
     </div>
-  )
+  );
 }

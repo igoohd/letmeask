@@ -1,21 +1,21 @@
-import { useState } from 'react'
-import copyImg from 'assets/images/copy.svg'
+import { useState } from "react";
+import copyImg from "assets/images/copy.svg";
 
-import './styles.scss'
+import "./styles.scss";
 
 type RoomCodeProps = {
-  code: string
-}
+  code: string;
+};
 
 export function RoomCode(props: RoomCodeProps) {
-  const [showTooltip, setShowTooltip] = useState(false)
+  const [showTooltip, setShowTooltip] = useState(false);
 
   function copyRoomCodeToClipboard() {
-    navigator.clipboard.writeText(props.code)
-    setShowTooltip(true)
+    navigator.clipboard.writeText(props.code);
+    setShowTooltip(true);
     setTimeout(() => {
-      setShowTooltip(false)
-    }, 1000)
+      setShowTooltip(false);
+    }, 1000);
   }
   return (
     <div className="room-code">
@@ -25,11 +25,9 @@ export function RoomCode(props: RoomCodeProps) {
         </div>
         <span>Sala #{props.code}</span>
       </button>
-      <div
-        className={`copy-tooltip ${showTooltip ? '-active' : ''}`}
-      >
+      <div className={`copy-tooltip ${showTooltip ? "-active" : ""}`}>
         Código copiado!
       </div>
     </div>
-  )
+  );
 }

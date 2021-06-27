@@ -9,7 +9,7 @@
       align-items: center;
 
       h1 {
-        font-family: 'Poppins', sans-serif;
+        font-family: "Poppins", sans-serif;
         font-size: 24px;
         color: #29292e;
       }
@@ -19,7 +19,7 @@
         background: #e559f9;
         border-radius: 9999px;
         padding: 8px 16px;
-        color: #FFF;
+        color: #fff;
         font-weight: 500;
         font-size: 14px;
       }
@@ -36,9 +36,9 @@
         resize: vertical;
         min-height: 130px;
         outline: none;
-  
+
         &:focus {
-          border:1px solid #e559f9;
+          border: 1px solid #e559f9;
           box-shadow: 0 0 10px #e559f9;
         }
       }
@@ -75,7 +75,7 @@
           button {
             background: transparent;
             border: 0;
-            color: #835AFD;
+            color: #835afd;
             text-decoration: underline;
             font-size: 14px;
             font-weight: 500;
