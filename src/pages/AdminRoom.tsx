@@ -1,15 +1,15 @@
 import { useParams } from 'react-router-dom'
 
-import deleteImg from '../assets/images/delete.svg'
-import checkImg from '../assets/images/check.svg'
-import answerImg from '../assets/images/answer.svg'
+import deleteImg from 'assets/images/delete.svg'
+import checkImg from 'assets/images/check.svg'
+import answerImg from 'assets/images/answer.svg'
 
-import { Question } from '../components/Question'
-import { Header } from '../components/Header'
-import { useRoom } from '../hooks/useRoom'
+import { Question } from 'components/Question'
+import { Header } from 'components/Header'
+import { useRoom } from 'hooks/useRoom'
 
-import './Room/styles.scss'
-import { database } from '../services/firebase'
+import 'pages/Room/styles.scss'
+import { database } from 'services/firebase'
 
 type RoomParams = {
   id: string

@@ -1,12 +1,12 @@
 import { FormEvent, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
-import { Button } from '../../components/Button'
-import { Header } from '../../components/Header'
-import { Question } from '../../components/Question'
-import { useAuth } from '../../hooks/useAuth'
-import { useRoom } from '../../hooks/useRoom'
-import { database } from '../../services/firebase'
+import { Button } from 'components/Button'
+import { Header } from 'components/Header'
+import { Question } from 'components/Question'
+import { useAuth } from 'hooks/useAuth'
+import { useRoom } from 'hooks/useRoom'
+import { database } from 'services/firebase'
 
 import './styles.scss'
 
