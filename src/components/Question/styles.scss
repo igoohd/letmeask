@@ -1,14 +1,14 @@
-.question {
+.question-container {
   background: #fefefe;
   border-radius: 8px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
   padding: 24px;
 
-  & + .question {
+  & + .question-container {
     margin-top: 8px;
   }
 
-  &.highlighted {
+  &.-highlighted {
     background: #f4f0ff;
     border: 1px solid #835afd;
 
@@ -17,66 +17,70 @@
     }
   }
 
-  &.answered {
+  &.-answered {
     background: #dbdcdd;
   }
 
-  p {
+  > .content {
     color: #29292e;
   }
 
-  footer {
+  > .question-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 24px;
 
-    .user-info {
+    > .user-info {
       display: flex;
       align-items: center;
-
-      img {
-        width: 32px;
-        height: 32px;
-        border-radius: 58%;
-      }
-
-      span {
-        margin-left: 8px;
-        color: #737380;
-        font-size: 14px;
-      }
     }
 
-    > div {
+    > .tools {
       display: flex;
       gap: 16px;
     }
 
-    button {
+    .icon-button {
       border: 0;
       background: transparent;
       cursor: pointer;
       transition: filter 0.2;
+    }
+  }
+}
 
-      &.like-button {
-        display: flex;
-        align-items: flex-end;
-        color: #737380;
-        gap: 8px;
+.user-info {
+  &.-footer > img {
+    width: 32px;
+    height: 32px;
+    border-radius: 58%;
+  }
 
-        &.liked {
-          color: #835afd;
+  &.-footer > span {
+    margin-left: 8px;
+    color: #737380;
+    font-size: 14px;
+  }
+}
 
-          svg path {
-            stroke: #835afd;
-          }
-        }
-      }
+.icon-button {
+  &.-question > .-like {
+    display: flex;
+    align-items: flex-end;
+    color: #737380;
+    gap: 8px;
 
-      &:hover {
-        filter: brightness(0.7);
+    &.-liked {
+      color: #835afd;
+
+      svg path {
+        stroke: #835afd;
       }
     }
+  }
+
+  &.-question > &:hover {
+    filter: brightness(0.7);
   }
 }

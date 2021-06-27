@@ -64,6 +64,7 @@ export function AdminRoom() {
                   <>
                     <button
                       type="button"
+                      className="icon-button"
                       onClick={() => handleCheckQuestionAsAnswered(question.id)}
                     >
                       <img
@@ -73,6 +74,7 @@ export function AdminRoom() {
                     </button>
                     <button
                       type="button"
+                      className="icon-button"
                       onClick={() => handleHighlightQuestion(question.id)}
                     >
                       <img src={answerImg} alt="Dar destaque a pergunta" />
@@ -81,6 +83,7 @@ export function AdminRoom() {
                 )}
                 <button
                   type="button"
+                  className="icon-button"
                   onClick={() => handleDeleteQuestion(question.id)}
                 >
                   <img src={deleteImg} alt="Remover pergunta" />

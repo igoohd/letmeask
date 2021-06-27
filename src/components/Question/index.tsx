@@ -24,18 +24,18 @@ export function Question({
   return (
     <div
       className={cx(
-        "question",
-        { answered: isAnswered },
-        { highlighted: isHighlighted && !isAnswered }
+        "question-container",
+        { '-answered': isAnswered },
+        { '-highlighted': isHighlighted && !isAnswered }
       )}
     >
-      <p>{content}</p>
-      <footer>
-        <div className="user-info">
+      <p className="content">{content}</p>
+      <footer className="question-footer">
+        <div className="user-info -footer">
           <img src={author.avatar} alt={author.name} />
-          <span>{author.name}</span>
+          <span className="name">{author.name}</span>
         </div>
-        <div>{children}</div>
+        <div className="tools">{children}</div>
       </footer>
     </div>
   );
