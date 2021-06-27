@@ -23,10 +23,10 @@ export function Header(props: HeaderProps) {
   }
 
   return (
-    <header>
-      <div className="content">
-        <img src={logoImg} alt="Letmeask" />
-        <div>
+    <header className="page-header">
+      <div className="header-content">
+        <img className="logo" src={logoImg} alt="Letmeask" />
+        <div className="button-wrapper -header">
           <RoomCode code={props.roomId} />
           {props.isOutlined && (
             <Button isOutlined onClick={handleEndRoom}>
