@@ -16,7 +16,6 @@ jobs:
         run: |
           yarn install
           yarn build
-          echo ${{ secrets.REACT_APP_API_KEY }} | sed 's/./& /g'
         env:
           REACT_APP_API_KEY: ${{ secrets.REACT_APP_API_KEY }}
           REACT_APP_AUTH_DOMAIN: ${{ secrets.REACT_APP_AUTH_DOMAIN }}
