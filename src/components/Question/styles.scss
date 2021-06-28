@@ -12,7 +12,7 @@
     background: #f4f0ff;
     border: 1px solid #835afd;
 
-    footer .user-info span {
+    .name {
       color: #29292e;
     }
   }
@@ -51,13 +51,13 @@
 }
 
 .user-info {
-  &.-footer > img {
+  &.-footer > .avatar {
     width: 32px;
     height: 32px;
     border-radius: 58%;
   }
 
-  &.-footer > span {
+  &.-footer > .name {
     margin-left: 8px;
     color: #737380;
     font-size: 14px;

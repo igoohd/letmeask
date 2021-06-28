@@ -32,7 +32,7 @@ export function Question({
       <p className="content">{content}</p>
       <footer className="question-footer">
         <div className="user-info -footer">
-          <img src={author.avatar} alt={author.name} />
+          <img className="avatar" src={author.avatar} alt={author.name} />
           <span className="name">{author.name}</span>
         </div>
         <div className="tools">{children}</div>
