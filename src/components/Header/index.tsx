@@ -1,8 +1,8 @@
 import { useHistory } from 'react-router-dom'
-import logoImg from '../../assets/images/logo.svg'
-import { database } from '../../services/firebase'
-import { Button } from '../Button'
-import { RoomCode } from '../RoomCode'
+import logoImg from '~/assets/images/logo.svg'
+import { database } from '~/services/firebase'
+import { Button } from '~/components/Button'
+import { RoomCode } from '~/components/RoomCode'
 
 import './styles.scss'
 
