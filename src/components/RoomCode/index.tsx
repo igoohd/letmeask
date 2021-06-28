@@ -1,5 +1,5 @@
-import { useState } from "react";
-import copyImg from "assets/images/copy.svg";
+import { useState } from 'react'
+import copyImg from '~/assets/images/copy.svg'
 
 import "./styles.scss";
 
