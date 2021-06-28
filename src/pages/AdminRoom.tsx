@@ -41,13 +41,13 @@ export function AdminRoom() {
   }
 
   return (
-    <div id="page-room">
+    <div className="page-room">
       <Header roomId={roomId} isOutlined></Header>
 
-      <main>
-        <div className="room-title">
-          <h1>Sala {title}</h1>
-          {questions.length > 0 && <span>{questions.length} pergunta(s)</span>}
+      <main className="main-heading">
+        <div className="room-title -heading">
+          <h1 className="title">Sala {title}</h1>
+          {questions.length > 0 && <span className="indicator">{questions.length} pergunta(s)</span>}
         </div>
 
         <div className="question-list">
