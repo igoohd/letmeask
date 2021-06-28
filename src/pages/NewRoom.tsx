@@ -42,21 +42,23 @@ export function NewRoom() {
   }
 
   return (
-    <div id="page-auth">
-      <aside>
+    <div className="page-auth">
+      <aside className="home-intro">
         <img
+          className="illustration"
           src={illustrationImg}
           alt="Ilustração simbolizando perguntas e respostas"
         />
-        <strong>Crie salas de Q&amp;A ao vivo</strong>
-        <p>Tire as dúvidas da sua audiência em tempo real</p>
+        <strong className="spotlight">Teste Crie salas de Q&amp;A ao vivo</strong>
+        <p className="description">Tire as dúvidas da sua audiência em tempo real</p>
       </aside>
-      <main>
+      <main className="main-wrapper">
         <div className="main-content">
-          <img src={logoImg} alt="Letmeask" />
-          <h2>Criar uma nova sala</h2>
-          <form onSubmit={handleCreateRoom}>
+          <img className="logo" src={logoImg} alt="Letmeask" />
+          <h2 className="title">Criar uma nova sala</h2>
+          <form className="room-form -main" onSubmit={handleCreateRoom}>
             <input
+              className="input"
               type="text"
               placeholder="Nome da sala"
               onChange={(event) => setNewRoom(event.target.value)}
@@ -64,11 +66,11 @@ export function NewRoom() {
             />
             <Button type="submit">Criar na sala</Button>
           </form>
-          <form onSubmit={handleSignOut}>
+          <form className="room-form -main" onSubmit={handleSignOut}>
             <Button type="submit">Logout</Button>
           </form>
-          <p>
-            Quer entrar em uma sala existente? <Link to="/">Clique aqui</Link>
+          <p className="cta-footer">
+            Quer entrar em uma sala existente? <Link className="link" to="/">Clique aqui</Link>
           </p>
         </div>
       </main>

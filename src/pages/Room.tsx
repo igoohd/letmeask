@@ -64,30 +64,31 @@ export function Room() {
   }
 
   return (
-    <div id="page-room">
+    <div className="page-room">
       <Header roomId={roomId}></Header>
 
-      <main>
-        <div className="room-title">
-          <h1>Sala {title}</h1>
-          {questions.length > 0 && <span>{questions.length} pergunta(s)</span>}
+      <main className="main-heading">
+        <div className="room-title -heading">
+          <h1 className="title">Sala {title}</h1>
+          {questions.length > 0 && <span className="indicator">{questions.length} pergunta(s)</span>}
         </div>
 
-        <form onSubmit={handleSendQuestion}>
+        <form className="room-form -heading" onSubmit={handleSendQuestion}>
           <textarea
+            className="textarea"
             placeholder="O que você quer perguntar?"
             onChange={(event) => setNewQuestion(event.target.value)}
             value={newQuestion}
           />
-          <div className="form-footer">
+          <div className="form-footer -room">
             {user ? (
-              <div className="user-info">
-                <img src={user.avatar} alt={user.name} />
-                <span>{user.name}</span>
+              <div className="user-info -footer">
+                <img className="avatar" src={user.avatar} alt={user.name} />
+                <span className="name">{user.name}</span>
               </div>
             ) : (
-              <span>
-                Para enviar uma pergunta, <button>faça seu login</button>.
+              <span className="user-info">
+                Para enviar uma pergunta, <button className="login">faça seu login</button>.
               </span>
             )}
             <Button type="submit" disabled={!user}>
@@ -108,7 +109,7 @@ export function Room() {
               >
                 {question.isAnswered && (
                   <button
-                    className={`icon-button -question like ${question.likeId ? "-liked" : ""}`}
+                    className={`icon-button -question -like ${question.likeId ? "-liked" : ""}`}
                     type="button"
                     aria-label="Marcar como gostei"
                     onClick={() =>
