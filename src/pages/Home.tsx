@@ -62,25 +62,27 @@ export function Home() {
   }
 
   return (
-    <div id="page-auth">
-      <aside>
+    <div className="page-auth">
+      <aside className="home-intro">
         <img
+          className="illustration"
           src={illustrationImg}
           alt="Ilustração simbolizando perguntas e respostas"
         />
-        <strong>Teste Crie salas de Q&amp;A ao vivo</strong>
-        <p>Tire as dúvidas da sua audiência em tempo real</p>
+        <strong className="spotlight">Teste Crie salas de Q&amp;A ao vivo</strong>
+        <p className="description">Tire as dúvidas da sua audiência em tempo real</p>
       </aside>
-      <main>
+      <main className="main-wrapper">
         <div className="main-content">
-          <img src={logoImg} alt="Letmeask" />
-          <button onClick={handleCreateRoom} className="create-room">
-            <img src={googleIconImg} alt="Logo do Google" />
+          <img className="logo" src={logoImg} alt="Letmeask" />
+          <button onClick={handleCreateRoom} className="create-room -main">
+            <img className="logo" src={googleIconImg} alt="Logo do Google" />
             Crie sua sala com o Google
           </button>
-          <div className="separator">ou entre em uma sala</div>
-          <form onSubmit={handleJoinRoom}>
+          <div className="separator -main">ou entre em uma sala</div>
+          <form className="room-form -main" onSubmit={handleJoinRoom}>
             <input
+              className="input"
               type="text"
               placeholder="Digite o código da sala"
               onChange={(event) => setRoomCode(event.target.value)}
