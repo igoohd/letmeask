@@ -109,7 +109,7 @@ export function Room() {
               >
                 {question.isAnswered && (
                   <button
-                    className={`icon-button -question like ${question.likeId ? "-liked" : ""}`}
+                    className={`icon-button -question -like ${question.likeId ? "-liked" : ""}`}
                     type="button"
                     aria-label="Marcar como gostei"
                     onClick={() =>

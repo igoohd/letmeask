@@ -65,7 +65,7 @@
 }
 
 .icon-button {
-  &.-question > .-like {
+  &.-question.-like {
     display: flex;
     align-items: flex-end;
     color: #737380;
@@ -80,7 +80,7 @@
     }
   }
 
-  &.-question > &:hover {
+  &.-question:hover {
     filter: brightness(0.7);
   }
 }
