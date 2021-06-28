@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { useParams } from "react-router-dom";
 
 import deleteImg from '~/assets/images/delete.svg'
 import checkImg from '~/assets/images/check.svg'
@@ -12,29 +12,31 @@ import '~/styles/room.scss'
 import { database } from '~/services/firebase'
 
 type RoomParams = {
-  id: string
-}
+  id: string;
+};
 
 export function AdminRoom() {
   // const { user } = useAuth()
-  const params = useParams<RoomParams>()
-  const roomId = params.id
+  const params = useParams<RoomParams>();
+  const roomId = params.id;
 
-  const { questions, title } = useRoom(roomId)
-
-
+  const { questions, title } = useRoom(roomId);
 
   async function handleCheckQuestionAsAnswered(questionId: string) {
-    await database.ref(`rooms/${roomId}/questions/${questionId}`).update({ isAnswered: true })
+    await database
+      .ref(`rooms/${roomId}/questions/${questionId}`)
+      .update({ isAnswered: true });
   }
 
   async function handleHighlightQuestion(questionId: string) {
-    await database.ref(`rooms/${roomId}/questions/${questionId}`).update({ isHighlighted: true })
+    await database
+      .ref(`rooms/${roomId}/questions/${questionId}`)
+      .update({ isHighlighted: true });
   }
 
   async function handleDeleteQuestion(questionId: string) {
-    if (window.confirm('Tem certeza que você deseja excluir esta pergunta?')) {
-      await database.ref(`rooms/${roomId}/questions/${questionId}`).remove()
+    if (window.confirm("Tem certeza que você deseja excluir esta pergunta?")) {
+      await database.ref(`rooms/${roomId}/questions/${questionId}`).remove();
     }
   }
 
@@ -45,11 +47,11 @@ export function AdminRoom() {
       <main>
         <div className="room-title">
           <h1>Sala {title}</h1>
-          { questions.length > 0 && <span>{questions.length} pergunta(s)</span> }
+          {questions.length > 0 && <span>{questions.length} pergunta(s)</span>}
         </div>
 
         <div className="question-list">
-          {questions.map(question => {
+          {questions.map((question) => {
             return (
               <Question
                 key={question.id}
@@ -61,10 +63,13 @@ export function AdminRoom() {
                 {!question.isAnswered && (
                   <>
                     <button
-                    type="button"
-                    onClick={() => handleCheckQuestionAsAnswered(question.id)}
+                      type="button"
+                      onClick={() => handleCheckQuestionAsAnswered(question.id)}
                     >
-                      <img src={checkImg} alt="Marcar pergunta como respondida" />
+                      <img
+                        src={checkImg}
+                        alt="Marcar pergunta como respondida"
+                      />
                     </button>
                     <button
                       type="button"
@@ -81,10 +86,10 @@ export function AdminRoom() {
                   <img src={deleteImg} alt="Remover pergunta" />
                 </button>
               </Question>
-            )
+            );
           })}
         </div>
       </main>
     </div>
-  )
+  );
 }
