@@ -20,10 +20,10 @@ export function RoomCode(props: RoomCodeProps) {
   return (
     <div className="room-code">
       <button className="copy-button" onClick={copyRoomCodeToClipboard}>
-        <div>
+        <div className="icon">
           <img src={copyImg} alt="Copy room code" />
         </div>
-        <span>Sala #{props.code}</span>
+        <span className="text">Sala #{props.code}</span>
       </button>
       <div className={`copy-tooltip ${showTooltip ? "-active" : ""}`}>
         Código copiado!
